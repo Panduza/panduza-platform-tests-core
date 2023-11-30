@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 # Attach to the repository
-LABEL org.opencontainers.image.source https://github.com/Panduza/panduza-py
+# LABEL org.opencontainers.image.source https://github.com/Panduza/panduza-py
 
 # Install Packages
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ=Europe/Paris \
@@ -17,4 +17,4 @@ RUN pip3 install    robotframework
 RUN pip3 install    PyHamcrest
 
 #
-WORKDIR /platform
+WORKDIR /tests
