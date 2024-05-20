@@ -2,5 +2,9 @@
     "robot.pythonpath": [
         "${workspaceFolder}",
         "${workspaceFolder}/benches/virtual"
+    ],
+    "robotcode.robot.pythonPath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/benches/virtual"
     ]
 }
