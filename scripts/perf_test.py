@@ -26,12 +26,15 @@ for topic, info in interfaces.items():
 
         ping = Ping(client=client, topic=topic)
         
+        
+        payload_sizes = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000]
         iterations = 5000
-        start_time = time.time()
-        for i in range(iterations):
-            ping.mirror.value.set(generate_random_string(4))
-        end_time = time.time()
-
-        elapsed_time = end_time - start_time
-        print(f"Le temps écoulé est {elapsed_time} secondes. {iterations/elapsed_time}op/s")
-
+        
+        for ps in payload_sizes:
+            start_time = time.time()
+            for i in range(iterations):
+                ping.mirror.value.set(generate_random_string(ps))
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            print(f"{ps} -> Le temps écoulé est {elapsed_time} secondes. {iterations/elapsed_time}op/s")
+        
