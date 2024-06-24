@@ -38,11 +38,11 @@ for topic, info in interfaces.items():
             elapsed_time = end_time - start_time
             print(f"{ps} -> Le temps écoulé est {elapsed_time} secondes. {iterations/elapsed_time}op/s")
         
-        for ps in payload_sizes:
-            start_time = time.time()
-            for i in range(iterations-1):
-                ping.mirror.value.set(generate_random_string(ps), ensure=False)
-            # ping.mirror.value.set(generate_random_string(ps), ensure=True)
-            end_time = time.time()
-            elapsed_time = end_time - start_time
-            print(f"{ps} -> Le temps écoulé est {elapsed_time} secondes. {iterations/elapsed_time}op/s")
+        # for ps in payload_sizes:
+        #     start_time = time.time()
+        #     for i in range(iterations-1):
+        #         ping.mirror.value.set(generate_random_string(ps), ensure=False)
+        #     # ping.mirror.value.set(generate_random_string(ps), ensure=True)
+        #     end_time = time.time()
+        #     elapsed_time = end_time - start_time
+        #     print(f"{ps} -> Le temps écoulé est {elapsed_time} secondes. {iterations/elapsed_time}op/s")
